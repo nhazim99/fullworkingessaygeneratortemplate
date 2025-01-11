@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Combined Sentences</title>
+  <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@400;500;600&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Lexend', sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f0f0f0;
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      min-height: 100vh;
+    }
+
+    h1 {
+      margin: 0;
+      margin-bottom: 20px;
+      padding: 20px 0;
+      font-size: 2em;
+      background-color: #3366FF;
+      color: #FFFFFF;
+      width: 100%;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    .container {
+      margin-top: 40px;
+      display: flex;
+      flex-direction: column; 
+      align-items: center;
+      width: 100%;
+    }
+
+    h2 {
+      font-size: 2em;
+      margin-bottom: 10px;
+    }
+
+    #finalParagraph {
+      background-color: #ffffff;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+      border-radius: 8px;
+      max-width: 600px;
+      width: 80%;
+      margin-bottom: 20px;
+      padding: 20px;
+      font-size: 1.5em;
+      color: #333;
+      text-align: left;
+    }
+
+    #goBackButton {
+      padding: 10px 20px;
+      background-color: #4CAF50;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 16px;
+    }
+    #goBackButton:hover {
+      background-color: #45a049;
+    }
+  </style>
+</head>
+<body>
+  <h1>Combined Sentences</h1>
+  <div class="container">
+    <h2>My Sentence</h2>
+    <div id="finalParagraph"></div>
+    <button id="goBackButton">Go Back To First App</button>
+  </div>
+
+  <script>
+    // Retrieve the three sentences from localStorage
+    const firstSentence  = localStorage.getItem("firstSentence")  || "";
+    const secondSentence = localStorage.getItem("secondSentence") || "";
+    const thirdSentence  = localStorage.getItem("thirdSentence")  || "";
+    const fourthSentence  = localStorage.getItem("fourthSentence")  || "";
+    const fifthSentence  = localStorage.getItem("fifthSentence")  || "";
+
+    // Combine them all:
+    const combinedParagraph = firstSentence + " " + secondSentence + " " + thirdSentence + " " + fourthSentence + " " + fifthSentence;
+
+    // Display it in finalParagraph
+    document.getElementById("finalParagraph").textContent = combinedParagraph;
+
+    // "Go Back" button logic
+    document.getElementById("goBackButton").addEventListener("click", () => {
+      window.location.href = "index.html";
+    });
+  </script>
+</body>
+</html>
